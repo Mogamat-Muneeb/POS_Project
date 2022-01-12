@@ -38,9 +38,11 @@ function readFruit(fruit){
     <div class="card" style="width: 18rem;">
     <img src="${fruit.img}" class="card-img-top">
     <div class="card-body">
-    <li>
-    ${fruit.name} ${fruit.catergory} ${fruit.price}
-    </li>
+    
+    ${fruit.name}
+    ${fruit.catergory} 
+    ${fruit.price}
+    
     <div class="content">
     <div  class="buttons">
     <button  class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#update-modal-${position}">EDIT</button>
@@ -54,17 +56,22 @@ function readFruit(fruit){
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <h5 class="modal-title" id="exampleModalLabel">EDIT YOUR PURCHASE</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <div class="modal-body">
-            <input type="text" id="update-input-${position}" value="${fruit.name} "/>
-            <input type="text" id="update-input-price-${position}" value="${fruit.price} "/>
-            <input type="text" id="update-input-img-${position}" value="${fruit.img} "/>
-            <select name="catergory" id="update-input-catergory-${position}">
-                <option>fruit</option>
-                <option>vegetable</option>
+          <div class="modal-body1">
+            <h4 class="fs-6">Name:</h4>
+            <input type="text"class="in" id="update-input-${position}" value="${fruit.name} "/>
+            <h4 class="fs-6">Category:</h4>
+            <select name="catergory" class="in" id="update-input-catergory-${position}">
+            <option value="fruit">fruit</option>
+            <option value="vegetable">vegetable</option>
             </select>
+            <h4 class="fs-6">Price:</h4>
+            <input type="text" class="in" id="update-input-price-${position}" value="${fruit.price} "/>
+            <h4 class="fs-6">Image:</h4>
+            <input type="text" class="in" id="update-input-img-${position}" value="${fruit.img} "/>
+           
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
