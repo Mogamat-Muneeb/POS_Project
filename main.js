@@ -1,23 +1,23 @@
 let fruit =[{
-  name:"carrot",
+  name:"Carrot",
   catergory:"vegetable",
   price:"R6.99",
   img:"https://i.ndtvimg.com/mt/cooks/2014-11/carrots.jpg"
 },
 {
-  name:"apples",
+  name:"Apples",
   catergory:"fruit",
   price:"R3.99",
   img:"https://media.istockphoto.com/photos/red-apple-picture-id184276818?k=20&m=184276818&s=612x612&w=0&h=QxOcueqAUVTdiJ7DVoCu-BkNCIuwliPEgtAQhgvBA_g="
 },
 {
-  name:"bananas",
+  name:"Bananas",
   catergory:"fruit",
   price:"4.99",
   img:"https://5.imimg.com/data5/CI/VG/MY-59453495/yellow-banana-500x500.jpg"
 },
 {
-  name:"potato",
+  name:"Potato",
   catergory:"vegetable",
   price:"R3.50",
   img:"https://www.localcrop.com.au/330-thickbox_default/potatoes-washed-1kg.jpg"
