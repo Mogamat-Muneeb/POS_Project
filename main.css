@@ -1,0 +1,52 @@
+#fruit{
+    list-style: none;
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.input-group{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+
+}
+
+#fruit{
+    display: grid;
+    justify-content: center;
+    
+
+}
+
+#taste{
+    border: solid 2px;
+    border-color: red;
+    
+}
+
+
+ .btn1{
+     display: grid;
+     justify-content: flex-end;
+ }
+ 
+
+.card-body{
+    display: flex;
+    justify-content: center;
+}
+
+img{
+    height: 200px;
+    width: 200px;
+    
+}
