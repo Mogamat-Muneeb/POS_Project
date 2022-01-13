@@ -65,7 +65,7 @@ function readFruit(fruit){
             <h4 class="fs-6">Category:</h4>
             <select name="catergory" class="in" id="update-input-catergory-${position}">
             <option value="fruit">fruit</option>
-            <option value="vegetable">vegetable</option>
+            <option value="vegetables">vegetables</option>
             </select>
             <h4 class="fs-6">Price:</h4>
             <input type="text" class="in" id="update-input-price-${position}" value="${fruit.price} "/>
@@ -143,4 +143,21 @@ function updateFruit(position){
     }
     }
   
-   
+   function filterAll(){
+    readFruit(fruit);
+   }
+
+   function filterFruit(){
+     let newFruit = fruit.filter(fruit =>{
+       return fruit.catergory == "fruit";
+     })
+     readFruit( newFruit);
+   }
+
+   function filterVeg(){
+    let newFruit = fruit.filter(fruit =>{
+      return fruit.catergory == "vegetables";
+    })
+    readFruit( newFruit);
+    console.log(newFruit)
+  }
