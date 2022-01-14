@@ -190,3 +190,52 @@ function updateFruit(position){
      localStorage.setItem("cart",JSON.stringify (cart));
    }   
  }
+
+
+
+ function catergorySort(){
+   let catergory = document.querySelector("#catergorySort").value;
+
+  console.log(catergorySort);
+
+   if( catergory == "all"){
+     readFruit(fruit);
+     return
+   }
+
+   let filteredProducts = fruit.filter((fruit) => {
+     return fruit.catergory == catergory;
+   });
+
+   readFruit(filteredProducts);
+  }
+
+  function priceSort() {
+    let direction = document.querySelector("#priceSort").value;
+  
+    let sortedProducts = fruit.sort((a, b) => a.price - b.price);
+  
+    console.log(sortedProducts);
+  
+    if (direction == "descending") sortedProducts.reverse();
+    readFruit(sortedProducts);
+  }
+  
+  
+  function sortName() {
+    let direction = document.querySelector("#sortName").value;
+  
+    let sortedProducts = fruit.sort((a, b) => {
+      if (a.name.toLowerCase() < b.name.toLowerCase()) {
+        return -1;
+      }
+      if (a.name.toLowerCase() > b.name.toLowerCase()) {
+        return 1;
+      }
+      return 0;
+    });
+    if (direction == "descending") sortedProducts.reverse();
+    console.log(sortedProducts);
+    readFruit(fruit);
+  }
+

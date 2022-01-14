@@ -23,7 +23,7 @@
       <div class="container">
         <div>
           <label for="catergorySort" class="form-label"> Sort by catergory</label>
-          <select name="catergorySort" id="catergory" onchange="">
+          <select name="catergorySort" id="catergorySort" onchange="catergorySort()">
             <option value="all">all</option>
             <option value="fruit">fruit</option>
             <option value="vegetables">vegetables</option>
@@ -31,6 +31,22 @@
           
         </div>
       </div>
+      <div>
+        <label for="priceSort" class="form-label">Sort by price</label>
+        <select name="priceSort" id="priceSort" onchange="priceSort()">
+          <option value="ascending">ascending</option>
+          <option value="descending">descending</option>
+        </select>
+      </div>
+
+
+      <label for="sortName" class="form-label">Sort by name</label>
+        <select name="sortName" id="sortName" onchange="sortName()">
+          <option value="ascending">ascending</option>
+          <option value="descending">descending</option>
+        </select>
+      </div>
+
      
    <div class="modal fade" id="addProduct" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
