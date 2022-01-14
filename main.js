@@ -1,13 +1,16 @@
-let fruit =[{
+let fruit = JSON.parse(localStorage.getItem("fruit"))
+? JSON.parse(localStorage.getItem("fruit"))
+:
+[{
   name:"Carrot",
   catergory:"vegetable",
-  price:"R6.99",
+  price:"6.99",
   img:"https://i.ndtvimg.com/mt/cooks/2014-11/carrots.jpg"
 },
 {
   name:"Apples",
   catergory:"fruit",
-  price:"R3.99",
+  price:"3.99",
   img:"https://media.istockphoto.com/photos/red-apple-picture-id184276818?k=20&m=184276818&s=612x612&w=0&h=QxOcueqAUVTdiJ7DVoCu-BkNCIuwliPEgtAQhgvBA_g="
 },
 {
@@ -19,14 +22,15 @@ let fruit =[{
 {
   name:"Potato",
   catergory:"vegetable",
-  price:"R3.50",
+  price:"3.50",
   img:"https://www.localcrop.com.au/330-thickbox_default/potatoes-washed-1kg.jpg"
 },
 ]
 
-fruit = JSON.parse(localStorage.getItem("fruit"))
-? JSON.parse(localStorage.getItem("fruit"))
-:fruit;
+
+let cart = JSON.parse(localStorage.getItem("cart"))
+? JSON.parse(localStorage.getItem("cart"))
+:[];
   
 
 function readFruit(fruit){
@@ -39,14 +43,18 @@ function readFruit(fruit){
     <img src="${fruit.img}" class="card-img-top">
     <div class="card-body">
     
-    ${fruit.name}
-    ${fruit.catergory} 
-    ${fruit.price}
-    
+    <h5 class="card-title">${fruit.name}</h5>
+    <p class="card-text"> ${fruit.price}</p>
+    <div>
+    <label class="form-label">Quantity:</label>
+    <input type="number" min=1 value=1 id="addQty${position}">
+    </div>
+   
     <div class="content">
     <div  class="buttons">
     <button  class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#update-modal-${position}">EDIT</button>
     <button  class="btn btn-danger" onclick="deleteFruit(${position})">DELETE</button>
+    <button  class="btn btn-danger" onclick="addToCart(${position})">ADD TO CART</button>
     </div>
     </div>
     </div>
@@ -69,6 +77,7 @@ function readFruit(fruit){
             </select>
             <h4 class="fs-6">Price:</h4>
             <input type="text" class="in" id="update-input-price-${position}" value="${fruit.price} "/>
+           
             <h4 class="fs-6">Image:</h4>
             <input type="text" class="in" id="update-input-img-${position}" value="${fruit.img} "/>
            
@@ -80,6 +89,8 @@ function readFruit(fruit){
         </div>
       </div>
     </div>
+
+
 
    `;
    });
@@ -143,21 +154,39 @@ function updateFruit(position){
     }
     }
   
-   function filterAll(){
-    readFruit(fruit);
-   }
+  //  function filterAll(){
+  //   readFruit(fruit);
+  //  }
 
-   function filterFruit(){
-     let newFruit = fruit.filter(fruit =>{
-       return fruit.catergory == "fruit";
-     })
-     readFruit( newFruit);
-   }
+  //  function filterFruit(){
+  //    let newFruit = fruit.filter(fruit =>{
+  //      return fruit.catergory == "fruit";
+  //    })
+  //    readFruit( newFruit);
+  //  }
 
-   function filterVeg(){
-    let newFruit = fruit.filter(fruit =>{
-      return fruit.catergory == "vegetables";
+  //  function filterVeg(){
+  //   let newFruit = fruit.filter(fruit =>{
+  //     return fruit.catergory == "vegetables";
+  //   })
+  //   readFruit( newFruit);
+  //   console.log(newFruit)
+  // }                                                       
+                  
+  function addToCart(position){
+    let qty = document.querySelector(`#addQty${position}`).value;
+    let added = false;
+    cart.forEach(product => {
+      if(product.name == fruit[position].name) {
+        product.qty = parseInt(product.qty) + parseInt(qty)
+        added = true
+        localStorage.setItem("cart",JSON.stringify (cart));
+      }
     })
-    readFruit( newFruit);
-    console.log(newFruit)
-  }
+
+
+   if(!added){
+     cart.push({...fruit[position], qty}) ;
+     localStorage.setItem("cart",JSON.stringify (cart));
+   }   
+ }
