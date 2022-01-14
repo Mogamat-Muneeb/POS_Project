@@ -33,13 +33,16 @@ function readCart(cart){
         `; 
     }
     );
+    document.querySelector("#cart").innerHTML +=`
+    <h1>your total is R${calculateTotal()}</h1>
+    `
 }
 
 readCart(cart);
 
 
 function updateCart(position){
-    let qty = document.querySelector(`updateCartQty${position}`).value;
+    let qty = document.querySelector(`#updateCartQty${position}`).value;
     cart[position] = {...cart[position], qty} ;
     localStorage.setItem("cart",JSON.stringify(cart));
     readCart(cart);
@@ -54,3 +57,10 @@ function deleteCart(position){
 
 
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+function calculateTotal(){
+    let total = 0;
+    cart.forEach(fruit => {
+        total = total + fruit.price * fruit.qty
+    })
+    return total.toFixed(2);
+}
