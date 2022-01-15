@@ -154,25 +154,7 @@ function updateFruit(position){
     }
     }
   
-  //  function filterAll(){
-  //   readFruit(fruit);
-  //  }
-
-  //  function filterFruit(){
-  //    let newFruit = fruit.filter(fruit =>{
-  //      return fruit.catergory == "fruit";
-  //    })
-  //    readFruit( newFruit);
-  //  }
-
-  //  function filterVeg(){
-  //   let newFruit = fruit.filter(fruit =>{
-  //     return fruit.catergory == "vegetables";
-  //   })
-  //   readFruit( newFruit);
-  //   console.log(newFruit)
-  // }                                                       
-                  
+        
   function addToCart(position){
     let qty = document.querySelector(`#addQty${position}`).value;
     let added = false;
