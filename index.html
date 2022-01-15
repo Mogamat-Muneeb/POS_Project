@@ -12,17 +12,17 @@
     <nav class="navbar navbar-light bg-light  ">
         <div class="container-fluid">
             <button class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#addProduct">ADD NEW</button>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="cart.html">CART</a>
-            </li>
+            <div class="nav-item">
+              <a class="nav-link" aria-current="page" href="index.html"><span style="color: black;">Home</span> </a>
+            </div>
+            <div class="nav-item">
+              <a class="nav-link" aria-current="page" href="cart.html"><span style="color: black;">Cart</span></a>
+            </div>
         </div>
       </nav>
       <div class="container">
         <div>
-          <label for="catergorySort" class="form-label"> Sort by catergory</label>
+          <label for="catergorySort" class="form-label"> Sort by catergory:</label>
           <select name="catergorySort" id="catergorySort" onchange="catergorySort()">
             <option value="all">all</option>
             <option value="fruit">fruit</option>
@@ -32,7 +32,7 @@
         </div>
       
        <div>
-         <label for="priceSort" class="form-label">Sort by price</label>
+         <label for="priceSort" class="form-label">Sort by price:</label>
          <select name="priceSort" id="priceSort" onchange="priceSort()">
           <option value="ascending">ascending</option>
           <option value="descending">descending</option>
@@ -40,7 +40,7 @@
        </div>
 
        <div>
-        <label for="sortName" class="form-label">Sort by name</label>
+        <label for="sortName" class="form-label">Sort by name:</label>
         <select name="sortName" id="sortName" onchange="sortName()">
           <option value="ascending">ascending</option>
           <option value="descending">descending</option>

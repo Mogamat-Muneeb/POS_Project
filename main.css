@@ -84,3 +84,9 @@ img{
     display: flex;
     justify-content: space-between;
 }
+
+.nav-item{
+    display: flex;
+    justify-content: flex-end;
+    align-content: flex-end;
+}
