@@ -116,7 +116,7 @@ function createFruit(){
     let price = document.querySelector("#price").value;
    
     try{
-        if(newfruit =="") throw "Please enter a fruit name..."
+        if(newfruit =="") throw "Please enter a Product name..."
         fruit.forEach(individual =>{
             if(individual == newfruit)throw "That fruit name already exists..."
         })
