@@ -44,7 +44,7 @@ function readFruit(fruit){
     <div class="card-body">
     
     <h5 class="card-title">${fruit.name}</h5>
-    <p class="card-text"> ${fruit.price}</p>
+    <p class="card-text"> R ${fruit.price}</p>
     <div>
     <label class="form-label">Quantity:</label>
     <input type="number" min=1 value=1 id="addQty${position}">

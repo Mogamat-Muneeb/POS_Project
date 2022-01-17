@@ -34,7 +34,7 @@ function readCart(cart){
     }
     );
     try{
-      if(cart.length == 0) throw "your cart is empty"
+      if(cart.length == 0) throw "Your cart is empty."
       document.querySelector("#cart").innerHTML +=`
     <h1> Your total is R${calculateTotal()}</h1>
     `
