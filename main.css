@@ -109,3 +109,12 @@ img{
     right:3px;
     text-align: center;
 }
+
+.img_logo{
+   width: 70px;
+   height: 55px;
+   object-fit: cover;
+}
+
+
+
