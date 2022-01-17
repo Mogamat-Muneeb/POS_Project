@@ -33,9 +33,18 @@ function readCart(cart){
         `; 
     }
     );
-    document.querySelector("#cart").innerHTML +=`
+    try{
+      if(cart.length == 0) throw "your cart is empty"
+      document.querySelector("#cart").innerHTML +=`
     <h1> Your total is R${calculateTotal()}</h1>
     `
+    }catch(err){
+      document.querySelector("#cart").innerHTML =`
+      <h1> ${err}</h1>
+      `
+      document.querySelector("#empty").hidden = true;
+    }
+    
 }
   
 readCart(cart);
