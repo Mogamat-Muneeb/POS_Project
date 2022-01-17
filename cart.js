@@ -64,3 +64,9 @@ function calculateTotal(){
     })
     return total.toFixed(2);
 }
+
+function checkOut(){
+  cart = [];
+  localStorage.setItem("cart",JSON.stringify(cart));
+  readCart(cart);
+}
