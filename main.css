@@ -1,5 +1,7 @@
 #fruit{
     list-style: none;
+   
+   
 }
 
 .content{
@@ -89,4 +91,8 @@ img{
     display: flex;
     justify-content: flex-end;
     align-content: flex-end;
+}
+
+.add_cart{
+    margin-top: 10px;
 }

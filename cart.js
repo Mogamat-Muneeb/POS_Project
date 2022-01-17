@@ -34,7 +34,7 @@ function readCart(cart){
     }
     );
     document.querySelector("#cart").innerHTML +=`
-    <h1> Total: Your total is R${calculateTotal()}</h1>
+    <h1> Your total is R${calculateTotal()}</h1>
     `
 }
 

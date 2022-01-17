@@ -52,9 +52,9 @@ function readFruit(fruit){
    
     <div class="content">
     <div  class="buttons">
-    <button  class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#update-modal-${position}">EDIT</button>
-    <button  class="btn btn-danger" onclick="deleteFruit(${position})">DELETE</button>
-    <button  class="btn btn-danger" onclick="addToCart(${position})">ADD TO CART</button>
+    <button  class="  add_cart btn btn-dark" data-bs-toggle="modal" data-bs-target="#update-modal-${position}">EDIT</button>
+    <button  class="  add_cart btn btn-danger" onclick="deleteFruit(${position})">DELETE</button>
+    <button  class=" add_cart btn btn-danger" onclick="addToCart(${position})">ADD TO CART</button>
     </div>
     </div>
     </div>
