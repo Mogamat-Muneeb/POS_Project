@@ -98,3 +98,14 @@ img{
 .add_cart{
     margin-top: 10px;
 }
+
+.nav-link #badge{ 
+    background-color: red;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 6px;
+    right:3px;
+    text-align: center;
+}

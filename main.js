@@ -35,7 +35,7 @@ let cart = JSON.parse(localStorage.getItem("cart"))
 
 function readFruit(fruit){
    document.querySelector("#fruit").innerHTML = "";
-
+   document.querySelector("#badge").innerHTML = "";
    fruit.forEach((fruit,position) => {
    document.querySelector("#fruit").innerHTML +=`
     
@@ -93,6 +93,17 @@ function readFruit(fruit){
 
 
    `;
+    let totalQty = 0;
+
+    cart.forEach(item =>{
+
+      totalQty += parseInt(item.qty)
+
+   })
+   if(totalQty !=0){
+     document.querySelector("#badge").innerHTML = totalQty
+   }
+
    });
 }
 
@@ -171,8 +182,10 @@ function updateFruit(position){
      cart.push({...fruit[position], qty}) ;
      localStorage.setItem("cart",JSON.stringify (cart));
    }   
- }
 
+   readFruit(fruit)
+ }
+  
 
 
  function catergorySort(){

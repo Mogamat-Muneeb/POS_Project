@@ -37,7 +37,7 @@ function readCart(cart){
     <h1> Your total is R${calculateTotal()}</h1>
     `
 }
-
+  
 readCart(cart);
 
 
